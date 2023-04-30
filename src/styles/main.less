@@ -1,3 +1,88 @@
+@import "maps.less";
+
+// ESCAPINGS
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+@breakpointMobile: ~"(max-width: 767px)";
+
+// MIXINS
+.marginBottom8 {
+    margin-bottom: 8px;
+}
+.fontSize14 {
+    font-size: 14px;
+}
+
+// RESET
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxygen', sans-serif;
+}
+
+// CUSTOM STYLE
 body {
-    background-color: #fdf47e;
+    background-color: #colors[bgColor];
+    color: #colors[txtDarkColor];
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media @breakpointTablet {
+        max-width: 80%;
+    }
+
+    @media @breakpointMobile {
+        max-width: 75%;
+    }
+}
+
+header {
+    padding: 24px;
+
+    .profile-avatar {
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+    }
+
+    .profile-bio {
+        text-align: center;
+
+        &-name {
+            font-size: 16px;
+            .marginBottom8();
+        }
+
+        &-subtitle {
+            .fontSize14();
+            .marginBottom8();
+        }
+
+        &-description {
+            .fontSize14();
+            opacity: .7;
+        }
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 230px;
+    width: 100%;
+    margin: 0 auto;
+
+    li {
+        list-style: none;
+        transition: all ease 500ms;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: all ease 500ms;
+        }
+    }
 }
