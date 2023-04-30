@@ -20,6 +20,10 @@
     font-family: 'Oxygen', sans-serif;
 }
 
+li {
+    list-style: none;
+}
+
 // CUSTOM STYLE
 body {
     background-color: #colors[bgColor];
@@ -30,23 +34,28 @@ body {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media @breakpointTablet {
         max-width: 80%;
     }
 
     @media @breakpointMobile {
-        max-width: 75%;
+        max-width: 95%;
     }
 }
 
 header {
-    padding: 24px;
+    padding: 24px 0;
 
     .profile-avatar {
         display: block;
         margin: 0 auto 24px;
         border-radius: 50%;
+        border: 2px solid #colors[btnColor];
     }
 
     .profile-bio {
@@ -77,12 +86,45 @@ header {
     margin: 0 auto;
 
     li {
-        list-style: none;
         transition: all ease 500ms;
 
         &:hover {
             transform: scale(1.2);
             transition: all ease 500ms;
+        }
+    }
+}
+
+.projects-section-title {
+    margin: 32px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #colors[txtDarkColor];
+}
+
+.projects-list {
+    margin-top: 32px;
+
+    &-item {
+        a {
+            display: block;
+            padding: 16px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            background-color: #colors[btnColor];
+            text-align: center;
+            color: #colors[txtLightColor];
+            font-weight: bold;
+            border: 2px solid #colors[btnColor];
+            border-radius: 30px;
+            transition: all ease 500ms;
+
+            &:hover {
+                color: #colors[btnColor];
+                background-color: transparent;
+                transition: all ease 500ms;
+            }
         }
     }
 }
